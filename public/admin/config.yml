@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OWNER/REPO_NAME  # ← Înlocuiește cu userul tău GitHub / numele repo-ului
+  repo: AncaCiolca/ancaciolca.github.io
   branch: main
 
 media_folder: public/uploads
