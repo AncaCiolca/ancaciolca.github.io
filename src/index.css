@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 97%;
+    --foreground: 20 15% 15%;
+
+    --card: 30 20% 95%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 30 25% 97%;
+    --popover-foreground: 20 15% 15%;
+
+    --primary: 350 30% 45%;
+    --primary-foreground: 30 25% 97%;
+
+    --secondary: 30 20% 90%;
+    --secondary-foreground: 20 15% 25%;
+
+    --muted: 30 15% 92%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 38 50% 75%;
+    --accent-foreground: 20 15% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 350 30% 45%;
+
+    --radius: 0.5rem;
+
+    --gold: 38 60% 55%;
+    --gold-light: 38 50% 75%;
+    --rose: 350 30% 45%;
+    --rose-light: 350 25% 80%;
+    --cream: 30 25% 97%;
+    --cream-dark: 30 20% 90%;
+    --sage: 140 15% 45%;
+    --sage-light: 140 12% 75%;
+
+    --sidebar-background: 30 20% 95%;
+    --sidebar-foreground: 20 15% 25%;
+    --sidebar-primary: 350 30% 45%;
+    --sidebar-primary-foreground: 30 25% 97%;
+    --sidebar-accent: 30 15% 90%;
+    --sidebar-accent-foreground: 20 15% 25%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 350 30% 45%;
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 30 20% 93%;
+
+    --card: 20 12% 14%;
+    --card-foreground: 30 20% 90%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 30 20% 90%;
+
+    --primary: 350 35% 55%;
+    --primary-foreground: 20 15% 10%;
+
+    --secondary: 20 10% 20%;
+    --secondary-foreground: 30 20% 85%;
+
+    --muted: 20 10% 18%;
+    --muted-foreground: 30 15% 68%;
+
+    --accent: 38 45% 50%;
+    --accent-foreground: 30 20% 90%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 10% 22%;
+    --input: 20 10% 22%;
+    --ring: 350 35% 55%;
+
+    --gold: 38 55% 50%;
+    --gold-light: 38 40% 40%;
+    --rose: 350 35% 55%;
+    --rose-light: 350 20% 30%;
+    --cream: 20 15% 10%;
+    --cream-dark: 20 12% 14%;
+    --sage: 140 15% 50%;
+    --sage-light: 140 10% 30%;
+
+    --sidebar-background: 20 12% 14%;
+    --sidebar-foreground: 30 20% 85%;
+    --sidebar-primary: 350 35% 55%;
+    --sidebar-primary-foreground: 20 15% 10%;
+    --sidebar-accent: 20 10% 20%;
+    --sidebar-accent-foreground: 30 20% 85%;
+    --sidebar-border: 20 10% 22%;
+    --sidebar-ring: 350 35% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Lora', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-handwriting {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-body {
+    font-family: 'Lora', serif;
+  }
+
+  .font-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--rose)));
+  }
+
+  .decorative-line {
+    @apply w-16 h-px mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+
+  .decorative-line-wide {
+    @apply w-32 h-px mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+
+  .poem-card {
+    @apply bg-card rounded-lg p-6 md:p-8 transition-all duration-500;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 4px 20px -5px hsl(var(--rose) / 0.08);
+  }
+
+  .poem-card:hover {
+    box-shadow: 0 8px 30px -5px hsl(var(--rose) / 0.15);
+    border-color: hsl(var(--gold-light));
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-5 md:px-8;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md rounded-xl;
+    background: hsl(var(--background) / 0.85);
+    border: 1px solid hsl(var(--gold-light) / 0.3);
+  }
+}
+
+/* Ascunde complet bara de scroll dar păstrează scroll-ul */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
+}
+
+/* Poetry text whitespace */
+.poem-text {
+  white-space: pre-line;
+  line-height: 1.9;
+}
