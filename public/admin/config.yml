@@ -1,0 +1,107 @@
+backend:
+  name: github
+  repo: OWNER/REPO_NAME  # ← Înlocuiește cu userul tău GitHub / numele repo-ului
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: poems
+    label: Poezii
+    folder: src/content/poems
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Extras", name: "excerpt", widget: "string" }
+      - { label: "Imagine", name: "image", widget: "image", required: false }
+      - { label: "Conținut", name: "body", widget: "text" }
+
+singletons:
+  - name: home
+    label: Acasă
+    file: src/content/home.md
+    icon: home
+    fields:
+      - { label: "Titlu Hero", name: "hero_title", widget: "string" }
+      - { label: "Subtitlu Hero", name: "hero_subtitle", widget: "string", required: false }
+      - { label: "Text buton Hero", name: "hero_button_label", widget: "string", required: false }
+      - { label: "Link buton Hero", name: "hero_button_link", widget: "string", required: false }
+      - { label: "Imagine Hero (light)", name: "hero_image_light", widget: "image", required: false }
+      - { label: "Imagine Hero (dark)", name: "hero_image_dark", widget: "image", required: false }
+      - { label: "Titlu secțiune ultime poezii", name: "latest_title", widget: "string", required: false }
+      - { label: "Subtitlu secțiune ultime poezii", name: "latest_subtitle", widget: "string", required: false }
+      - { label: "Titlu footer (nume site)", name: "footer_title", widget: "string", required: false }
+      - { label: "Citat footer", name: "footer_quote", widget: "string", required: false }
+      - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+      - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+      - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+      - { label: "Text copyright footer", name: "footer_copyright", widget: "string", required: false }
+
+  - name: about
+    label: Despre
+    file: src/content/about.md
+    icon: person
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Subtitlu", name: "subtitle", widget: "string", required: false }
+      - { label: "Imagine", name: "image", widget: "image", required: false }
+      - { label: "Citat", name: "quote", widget: "string", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Titlu secțiune contact", name: "contact_title", widget: "string", required: false }
+      - { label: "Subtitlu mic contact", name: "contact_subtitle_small", widget: "string", required: false }
+      - { label: "Text sub card contact", name: "contact_footer_text", widget: "string", required: false }
+      - { label: "Conținut", name: "body", widget: "markdown" }
+
+  - name: not_found
+    label: 404
+    file: src/content/not-found.md
+    icon: warning
+    fields:
+      - { label: "Label mic deasupra", name: "label", widget: "string", required: false }
+      - { label: "Titlu mare (ex. 404)", name: "title", widget: "string", required: false }
+      - { label: "Descriere", name: "description", widget: "string", required: false }
+      - { label: "Text buton", name: "button_label", widget: "string", required: false }
+
+  - divider: true
+
+  - name: seo_global
+    label: SEO - Global
+    file: src/content/seo-global.md
+    icon: settings
+    fields:
+      - { label: "Nume site", name: "site_name", widget: "string", required: false }
+      - { label: "URL site (pentru Google)", name: "site_url", widget: "string", required: false }
+      - { label: "Descriere implicită", name: "default_description", widget: "text", required: false }
+      - { label: "OG Locale (ex. ro_RO)", name: "og_locale", widget: "string", required: false }
+      - { label: "Favicon (icoană site)", name: "favicon", widget: "image", required: false }
+
+  - name: seo_home
+    label: SEO - Acasă
+    file: src/content/seo-home.md
+    icon: language
+    fields:
+      - { label: "Titlu SEO (metatitle)", name: "meta_title", widget: "string", required: false }
+      - { label: "Descriere SEO", name: "meta_description", widget: "text", required: false }
+      - { label: "Imagine pentru share (OG)", name: "og_image", widget: "image", required: false }
+
+  - name: seo_poems
+    label: SEO - Poezii
+    file: src/content/seo-poems.md
+    icon: language
+    fields:
+      - { label: "Titlu SEO (metatitle)", name: "meta_title", widget: "string", required: false }
+      - { label: "Descriere SEO", name: "meta_description", widget: "text", required: false }
+      - { label: "Imagine pentru share (OG)", name: "og_image", widget: "image", required: false }
+
+  - name: seo_about
+    label: SEO - Despre
+    file: src/content/seo-about.md
+    icon: language
+    fields:
+      - { label: "Titlu SEO (metatitle)", name: "meta_title", widget: "string", required: false }
+      - { label: "Descriere SEO", name: "meta_description", widget: "text", required: false }
+      - { label: "Imagine pentru share (OG)", name: "og_image", widget: "image", required: false }
