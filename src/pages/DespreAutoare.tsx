@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Feather, Quote, Mail, Heart } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { getAboutData } from "@/lib/aboutData";
+import { getHomeData } from "@/lib/homeData";
 import {
   SITE_NAME,
   SITE_URL,
@@ -12,6 +13,7 @@ import {
 
 const DespreAutoare = () => {
   const about = getAboutData();
+  const home = getHomeData();
   const paragraphs = about.body.split(/\n{2,}/).filter(Boolean);
 
   const pageUrl = `${SITE_URL}/despre-mine`;
@@ -25,7 +27,7 @@ const DespreAutoare = () => {
   const seo = getAboutSeo();
 
   return (
-    <main className="pt-24 md:pt-28 relative overflow-hidden">
+    <main className="relative overflow-hidden">
       <Helmet>
         <title>{seo.metaTitle || `${SITE_NAME} | Despre Mine`}</title>
         <meta
@@ -55,25 +57,33 @@ const DespreAutoare = () => {
         <link rel="canonical" href={pageUrl} />
       </Helmet>
 
-      {/* Bandă de culoare sub navbar doar pe tema light, să acopere complet zona albă */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-32 -z-10 bg-card dark:bg-transparent" />
-
-      {/* Background decorativ global */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-rose-light/5 via-transparent to-gold-light/5" />
-        <div className="absolute top-20 right-10 w-80 h-80 rounded-full bg-gold-light/8 blur-[100px]" />
-        <div className="absolute top-[40%] -left-20 w-96 h-96 rounded-full bg-rose-light/8 blur-[120px]" />
-        <div className="absolute bottom-32 right-1/3 w-72 h-72 rounded-full bg-gold-light/6 blur-[80px]" />
-        <div className="absolute top-[60%] left-1/4 w-64 h-64 rounded-full bg-primary/3 blur-[100px]" />
-      </div>
-
-      {/* Hero band cu foto */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
-        <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-rose-light/10 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 rounded-full bg-gold-light/10 blur-3xl" />
-
-        <div className="relative mx-auto max-w-5xl px-5 md:px-4 py-12 md:py-20">
+      {/* Hero + Quote: fundal imagine de la top (vizibil sub meniu, ca pe prima pagină) */}
+      <div className="relative">
+        {/* Imagine de fundal - de la top, sub navbar */}
+        <div className="absolute inset-0">
+          <img
+            src={home.heroImageLight}
+            alt=""
+            className="w-full h-full object-cover object-center dark:hidden"
+            aria-hidden
+          />
+          <img
+            src={home.heroImageDark}
+            alt=""
+            className="w-full h-full object-cover object-center hidden dark:block"
+            aria-hidden
+          />
+          {/* Degradé: imaginea se vede sus, se pierde în fundal în zona citatului */}
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-background/65 via-background/85 to-background dark:from-background/60 dark:via-background/80 dark:to-background"
+            aria-hidden
+          />
+        </div>
+        {/* Conținut peste fundal - cu padding ca să nu fie sub meniu */}
+        <div className="relative z-10 pt-24 md:pt-28">
+        {/* Hero band cu foto */}
+        <section className="relative overflow-hidden">
+          <div className="relative mx-auto max-w-5xl px-5 md:px-4 py-12 md:py-20">
           <div className="flex flex-col items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -145,6 +155,9 @@ const DespreAutoare = () => {
           <div className="decorative-line mt-6" />
         </motion.div>
       </section>
+
+        </div>
+      </div>
 
       {/* Despre mine */}
       <section className="px-5 md:px-4 pb-12 md:pb-16">
