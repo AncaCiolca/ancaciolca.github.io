@@ -45,7 +45,7 @@ const PoemCard = ({ poem, index = 0, compact = false }: PoemCardProps) => {
             <h3 className="font-display text-xl md:text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
               {poem.title}
             </h3>
-            <p className="font-elegant text-base text-muted-foreground italic leading-relaxed line-clamp-2 mt-auto">
+            <p className="font-elegant text-lg md:text-base text-muted-foreground italic leading-relaxed line-clamp-2 mt-auto">
               {poem.excerpt}
             </p>
           </div>
