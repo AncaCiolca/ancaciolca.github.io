@@ -186,3 +186,13 @@ html::-webkit-scrollbar {
   white-space: pre-line;
   line-height: 1.9;
 }
+
+/* Lizibilitate mai bună pe mobil: font mai mare la bază */
+@media (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+  .poem-text {
+    line-height: 2;
+  }
+}

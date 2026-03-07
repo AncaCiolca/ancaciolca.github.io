@@ -73,7 +73,7 @@ const PoemDetail = () => {
       </Helmet>
       <section className="section-padding">
         <div className="mx-auto max-w-4xl lg:max-w-5xl">
-          <Link to="/poezii" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-body text-sm mb-8">
+          <Link to="/poezii" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-body text-base md:text-sm mb-8">
             <ArrowLeft className="w-4 h-4" /> Înapoi la poezii
           </Link>
 
@@ -82,7 +82,7 @@ const PoemDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <div className="flex items-center gap-2 text-base md:text-sm text-muted-foreground mb-4">
               <Calendar className="w-4 h-4" />
               <span className="font-body">{formattedDate}</span>
             </div>

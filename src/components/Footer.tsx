@@ -16,7 +16,7 @@ const Footer = () => {
 
           <div className="decorative-line-wide" />
 
-          <p className="font-elegant text-lg text-muted-foreground italic text-center max-w-md">
+          <p className="font-elegant text-lg md:text-lg text-muted-foreground italic text-center max-w-md">
             {`„${home.footerQuote}”`}
           </p>
 
@@ -35,7 +35,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <p className="text-xs text-muted-foreground">
+          <p className="text-sm md:text-xs text-muted-foreground">
             {home.footerCopyright}
           </p>
         </div>

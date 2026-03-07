@@ -193,7 +193,7 @@ const DespreAutoare = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors duration-500">
                 <Mail className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-3">
+              <p className="font-body text-sm md:text-xs tracking-widest uppercase text-muted-foreground mb-3">
                 {(about.contactSubtitleSmall ?? "Scrie-mi pe email").toUpperCase()}
               </p>
               {about.email && (
@@ -202,7 +202,7 @@ const DespreAutoare = () => {
                 </p>
               )}
               <div className="decorative-line mt-6" />
-              <p className="font-elegant text-sm text-muted-foreground italic mt-4">
+              <p className="font-elegant text-base md:text-sm text-muted-foreground italic mt-4">
                 {about.contactFooterText ?? "Răspund cu drag fiecărui mesaj ♡"}
               </p>
             </a>

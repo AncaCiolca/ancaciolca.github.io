@@ -38,11 +38,11 @@ const PoemCard = ({ poem, index = 0, compact = false }: PoemCardProps) => {
             </div>
           )}
           <div className="p-5 flex-1 flex flex-col">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+            <div className="flex items-center gap-2 text-base md:text-sm text-muted-foreground mb-2">
               <Calendar className="w-3.5 h-3.5" />
               <span className="font-body">{formattedDate}</span>
             </div>
-            <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+            <h3 className="font-display text-xl md:text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
               {poem.title}
             </h3>
             <p className="font-elegant text-base text-muted-foreground italic leading-relaxed line-clamp-2 mt-auto">
@@ -78,17 +78,17 @@ const PoemCard = ({ poem, index = 0, compact = false }: PoemCardProps) => {
             </div>
           )}
           <div className="md:w-1/2 py-4 md:py-6 flex flex-col justify-center">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+            <div className="flex items-center gap-2 text-sm md:text-xs text-muted-foreground mb-3">
               <Calendar className="w-3 h-3" />
               <span className="font-body">{formattedDate}</span>
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
               {poem.title}
             </h3>
-            <div className="font-elegant text-base md:text-lg text-muted-foreground italic leading-relaxed mb-5 poem-text line-clamp-6">
+            <div className="font-elegant text-lg text-muted-foreground italic leading-relaxed mb-5 poem-text line-clamp-6">
               {poem.content.split('\n').slice(0, 8).join('\n')}
             </div>
-            <div className="flex items-center gap-2 text-primary font-body text-sm tracking-wide group-hover:gap-3 transition-all">
+            <div className="flex items-center gap-2 text-primary font-body text-base md:text-sm tracking-wide group-hover:gap-3 transition-all">
               Citește poezia
               <ArrowRight className="w-4 h-4" />
             </div>

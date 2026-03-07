@@ -62,7 +62,7 @@ const Index = () => {
             </p>
             <Link
               to={home.heroButtonLink || "/poezii"}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-body text-sm tracking-wide hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-body text-base md:text-sm tracking-wide hover:opacity-90 transition-opacity"
             >
               {home.heroButtonLabel}
               <ArrowRight className="w-4 h-4" />
@@ -103,7 +103,7 @@ const Index = () => {
           >
             <Link
               to="/poezii"
-              className="inline-flex items-center gap-2 text-primary font-body text-sm tracking-wide hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-primary font-body text-base md:text-sm tracking-wide hover:gap-3 transition-all"
             >
               Vezi toate poeziile
               <ArrowRight className="w-4 h-4" />
