@@ -6,6 +6,8 @@ export interface AboutData {
   subtitle?: string;
   quote?: string;
   image?: string;
+  heroImageLight?: string;
+  heroImageDark?: string;
   email?: string;
   contactTitle?: string;
   contactSubtitleSmall?: string;
@@ -28,6 +30,8 @@ export const getAboutData = (): AboutData => {
     subtitle: attributes.subtitle || "",
     quote: attributes.quote || "",
     image: attributes.image || "",
+    heroImageLight: attributes.hero_image_light || "",
+    heroImageDark: attributes.hero_image_dark || "",
     email: attributes.email || "",
     contactTitle: attributes.contact_title || "Scrie-mi",
     contactSubtitleSmall: attributes.contact_subtitle_small || "Scrie-mi pe email",

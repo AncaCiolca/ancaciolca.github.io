@@ -2,6 +2,8 @@
 title: Anca Ciolca
 subtitle: Poetă & Iubitoare de Frumos
 image: /uploads/anca-ciolca-01.jpg
+hero_image_light:
+hero_image_dark:
 quote: Scriu ca să nu uit că viața este frumoasă.
 email: contact@versuri-de-suflet.ro
 contact_title: Scrie-mi

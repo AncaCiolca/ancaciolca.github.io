@@ -36,9 +36,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(() => {
     if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
+      const saved = localStorage.getItem("theme");
+      return saved !== "light";
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    if (saved === "dark") setDark(true);
+    if (saved === "light") setDark(false);
   }, []);
 
   // Lock body scroll when menu is open

@@ -62,13 +62,13 @@ const DespreAutoare = () => {
         {/* Imagine de fundal - de la top, sub navbar */}
         <div className="absolute inset-0">
           <img
-            src={home.heroImageLight}
+            src={about.heroImageLight || home.heroImageLight}
             alt=""
             className="w-full h-full object-cover object-center dark:hidden"
             aria-hidden
           />
           <img
-            src={home.heroImageDark}
+            src={about.heroImageDark || home.heroImageDark}
             alt=""
             className="w-full h-full object-cover object-center hidden dark:block"
             aria-hidden

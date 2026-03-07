@@ -49,6 +49,8 @@ singletons:
       - { label: "Titlu", name: "title", widget: "string" }
       - { label: "Subtitlu", name: "subtitle", widget: "string", required: false }
       - { label: "Imagine", name: "image", widget: "image", required: false }
+      - { label: "Imagine fundal Hero - tema light", name: "hero_image_light", widget: "image", required: false }
+      - { label: "Imagine fundal Hero - tema dark", name: "hero_image_dark", widget: "image", required: false }
       - { label: "Citat", name: "quote", widget: "string", required: false }
       - { label: "Email", name: "email", widget: "string", required: false }
       - { label: "Titlu secțiune contact", name: "contact_title", widget: "string", required: false }
