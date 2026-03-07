@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: AncaCiolca/ancaciolca.github.io/
+  repo: AncaCiolca/ancaciolca.github.io
   branch: main
 
 media_folder: public/uploads
