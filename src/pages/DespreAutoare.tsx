@@ -92,7 +92,7 @@ const DespreAutoare = () => {
               className="relative mb-8 md:mb-10"
             >
               {about.image && (
-                <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-gold/20 shadow-2xl">
+                <div className="w-[15.4rem] h-[15.4rem] md:w-[19.8rem] md:h-[19.8rem] rounded-full overflow-hidden border-4 border-gold/20 shadow-2xl">
                   <img
                     src={about.image}
                     alt={about.title || "Anca Ciolca"}

@@ -86,7 +86,7 @@ const Navbar = () => {
         <div className="mx-auto max-w-6xl lg:max-w-7xl px-5 md:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="group md:ml-0">
-              <span className="font-handwriting text-3xl md:text-4xl text-primary">
+              <span className="font-handwriting text-[2.0625rem] md:text-4xl text-primary">
                 Anca Ciolca
               </span>
             </Link>
