@@ -7,7 +7,7 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "src", "content", "poems");
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
 
-const SITE_URL = "https://versuri-de-suflet.ro";
+const SITE_URL = "https://ancaciolca.github.io";
 
 function getPoemSlugs() {
   if (!fs.existsSync(CONTENT_DIR)) return [];
