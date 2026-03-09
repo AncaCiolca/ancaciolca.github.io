@@ -206,6 +206,79 @@ async function ensureDir(dirPath) {
   await fs.mkdir(dirPath, { recursive: true });
 }
 
+async function updateRootIndexOg(seo) {
+  const indexHtmlPath = path.join(DIST_DIR, "index.html");
+  let html = await fs.readFile(indexHtmlPath, "utf8");
+
+  if (!/property=["']og:image["']/i.test(html)) {
+    const insertion = [
+      `    <meta property="og:url" content="${seo.siteUrl}/" />`,
+      `    <meta property="og:image" content="${seo.siteUrl}${seo.defaultOgImage}" />`,
+    ].join("\n");
+
+    html = html.replace(
+      /<\/head>/i,
+      `${insertion}\n  </head>`,
+    );
+    await fs.writeFile(indexHtmlPath, html, "utf8");
+  }
+}
+
+async function generateStaticPage({
+  slugPath,
+  outDir,
+  title,
+  description,
+  ogType,
+  seo,
+  assets,
+}) {
+  const url =
+    slugPath === ""
+      ? `${seo.siteUrl}/`
+      : `${seo.siteUrl}/${slugPath.replace(/^\/+/, "")}`;
+
+  const ogImage = `${seo.siteUrl}${seo.defaultOgImage}`;
+
+  const headParts = [
+    assets.charsetMeta,
+    assets.viewportMeta,
+    `<title>${escapeHtml(title)}</title>`,
+    `<meta name="description" content="${escapeHtml(description)}" />`,
+    `<link rel="canonical" href="${url}" />`,
+    `<meta property="og:title" content="${escapeHtml(title)}" />`,
+    `<meta property="og:description" content="${escapeHtml(description)}" />`,
+    `<meta property="og:type" content="${ogType}" />`,
+    `<meta property="og:url" content="${url}" />`,
+    `<meta property="og:image" content="${ogImage}" />`,
+    `<meta property="og:site_name" content="${escapeHtml(seo.siteName)}" />`,
+    `<meta property="og:locale" content="${seo.ogLocale}" />`,
+    assets.faviconLink || `<link rel="icon" href="${seo.favicon}" />`,
+    ...assets.cssLinks,
+    ...assets.scriptTags,
+  ].filter(Boolean);
+
+  const bodyHtml = `
+    <div id="root"></div>
+  `;
+
+  await ensureDir(outDir);
+  const outPath = path.join(outDir, "index.html");
+  const html = [
+    "<!DOCTYPE html>",
+    '<html lang="ro">',
+    "<head>",
+    headParts.join("\n    "),
+    "</head>",
+    "<body>",
+    bodyHtml,
+    "</body>",
+    "</html>",
+  ].join("\n");
+
+  await fs.writeFile(outPath, html, "utf8");
+}
+
 async function main() {
   const [seo, assets, poems] = await Promise.all([
     loadSeoConfig(),
@@ -220,6 +293,41 @@ async function main() {
     const html = buildPoemHtml({ poem, seo, assets });
     await fs.writeFile(outPath, html, "utf8");
   }
+
+  // Also ensure homepage has basic OG url/image in static HTML
+  await updateRootIndexOg(seo);
+
+  // And generate simple static shells for /poezii and /despre-mine
+  await generateStaticPage({
+    slugPath: "",
+    outDir: DIST_DIR,
+    title: `${seo.siteName} – Poezii și Versuri`,
+    description: seo.defaultDescription,
+    ogType: "website",
+    seo,
+    assets,
+  });
+
+  await generateStaticPage({
+    slugPath: "poezii",
+    outDir: path.join(DIST_DIR, "poezii"),
+    title: `${seo.siteName} | Poezii`,
+    description: "Toate poeziile Ancăi Ciolca, adunate într-un singur loc.",
+    ogType: "website",
+    seo,
+    assets,
+  });
+
+  await generateStaticPage({
+    slugPath: "despre-mine",
+    outDir: path.join(DIST_DIR, "despre-mine"),
+    title: `${seo.siteName} | Despre Mine`,
+    description:
+      "Află mai multe despre Anca Ciolca, poeta din spatele versurilor de suflet.",
+    ogType: "profile",
+    seo,
+    assets,
+  });
 }
 
 main().catch(err => {
