@@ -89,6 +89,9 @@ singletons:
       - { label: "Titlu SEO (metatitle)", name: "meta_title", widget: "string", required: false }
       - { label: "Descriere SEO", name: "meta_description", widget: "text", required: false }
       - { label: "Imagine pentru share (OG)", name: "og_image", widget: "image", required: false }
+      - { label: "Nume autor (schema.org Person)", name: "author_name", widget: "string", required: false }
+      - { label: "Descriere autor", name: "author_description", widget: "text", required: false }
+      - { label: "Imagine autor (schema.org Person)", name: "author_image", widget: "image", required: false }
 
   - name: seo_poems
     label: SEO - Poezii

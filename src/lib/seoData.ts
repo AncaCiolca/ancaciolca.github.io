@@ -16,6 +16,9 @@ export interface PageSeo {
   metaTitle: string;
   metaDescription: string;
   ogImage?: string;
+  authorName?: string;
+  authorDescription?: string;
+  authorImage?: string;
 }
 
 let cachedGlobal: SeoGlobal | null = null;
@@ -47,6 +50,9 @@ const mapPageSeo = (raw: string, defaults: PageSeo): PageSeo => {
     metaTitle: attributes.meta_title || defaults.metaTitle,
     metaDescription: attributes.meta_description || defaults.metaDescription,
     ogImage: attributes.og_image || defaults.ogImage,
+    authorName: attributes.author_name || defaults.authorName,
+    authorDescription: attributes.author_description || defaults.authorDescription,
+    authorImage: attributes.author_image || defaults.authorImage,
   };
 };
 
@@ -57,6 +63,10 @@ export const getSeoHome = (): PageSeo => {
     metaTitle: global.siteName,
     metaDescription: global.defaultDescription,
     ogImage: "/uploads/hero-bg.jpg",
+    authorName: "Anca Ciolca",
+    authorDescription:
+      "Poetă, autoare de poezii de suflet.",
+    authorImage: "/uploads/anca-ciolca-01.jpg",
   });
   return cachedHome;
 };

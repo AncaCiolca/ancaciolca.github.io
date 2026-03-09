@@ -12,6 +12,15 @@ const Index = () => {
   const home = getHomeData();
   const seo = getHomeSeo();
 
+  const authorJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: seo.authorName || "Anca Ciolca",
+    description: seo.authorDescription || DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    image: seo.authorImage ? `${SITE_URL}${seo.authorImage}` : `${SITE_URL}/uploads/anca-ciolca-01.jpg`,
+  };
+
   return (
     <main>
       <Helmet>
@@ -29,6 +38,9 @@ const Index = () => {
         <meta property="og:locale" content={OG_LOCALE} />
         <link rel="icon" href={FAVICON_PATH} />
         <link rel="canonical" href={SITE_URL} />
+        <script type="application/ld+json">
+          {JSON.stringify(authorJsonLd)}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
