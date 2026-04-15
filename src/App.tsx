@@ -8,8 +8,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import Index from "./pages/Index";
 
-const Index = lazy(() => import("./pages/Index"));
 const Poems = lazy(() => import("./pages/Poems"));
 const PoemDetail = lazy(() => import("./pages/PoemDetail"));
 const DespreAutoare = lazy(() => import("./pages/DespreAutoare"));
@@ -27,7 +27,7 @@ const App = () => (
       <HelmetProvider context={helmetContext}>
         <BrowserRouter>
           <Navbar />
-          <Suspense fallback={<main className="min-h-[50vh]" />}>
+          <Suspense fallback={<main className="min-h-screen" />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/poezii" element={<Poems />} />
