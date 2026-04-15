@@ -27,6 +27,17 @@ const DespreAutoare = () => {
       : `${SITE_URL}/placeholder.svg`;
 
   const seo = getAboutSeo();
+  const heroLight = about.heroImageLight || home.heroImageLight;
+  const heroDark = about.heroImageDark || home.heroImageDark;
+  const heroLightSrcSet = heroLight.endsWith(".webp")
+    ? `${heroLight.replace(".webp", "-768.webp")} 768w, ${heroLight.replace(".webp", "-1280.webp")} 1280w, ${heroLight} 1920w`
+    : undefined;
+  const heroDarkSrcSet = heroDark.endsWith(".webp")
+    ? `${heroDark.replace(".webp", "-768.webp")} 768w, ${heroDark.replace(".webp", "-1280.webp")} 1280w, ${heroDark} 1920w`
+    : undefined;
+  const profileSrcSet = about.image?.endsWith(".webp")
+    ? `${about.image.replace(".webp", "-640.webp")} 640w, ${about.image.replace(".webp", "-1024.webp")} 1024w, ${about.image} 1600w`
+    : undefined;
 
   return (
     <main className="relative overflow-hidden">
@@ -64,16 +75,24 @@ const DespreAutoare = () => {
         {/* Imagine de fundal - de la top, sub navbar */}
         <div className="absolute inset-0">
           <img
-            src={about.heroImageLight || home.heroImageLight}
+            src={heroLight}
+            srcSet={heroLightSrcSet}
+            sizes="100vw"
             alt=""
             className="w-full h-full object-cover object-center dark:hidden"
             aria-hidden
+            loading="eager"
+            decoding="async"
           />
           <img
-            src={about.heroImageDark || home.heroImageDark}
+            src={heroDark}
+            srcSet={heroDarkSrcSet}
+            sizes="100vw"
             alt=""
             className="w-full h-full object-cover object-center hidden dark:block"
             aria-hidden
+            loading="eager"
+            decoding="async"
           />
           {/* Degradé: imaginea se vede sus, se pierde în fundal în zona citatului */}
           <div
@@ -97,8 +116,12 @@ const DespreAutoare = () => {
                 <div className="w-[15.4rem] h-[15.4rem] md:w-[19.8rem] md:h-[19.8rem] rounded-full overflow-hidden border-4 border-gold/20 shadow-2xl">
                   <img
                     src={about.image}
+                    srcSet={profileSrcSet}
+                    sizes="(max-width: 768px) 246px, 317px"
                     alt={about.title || "Anca Ciolca"}
                     className="w-full h-full object-cover object-top"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               )}

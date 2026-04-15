@@ -11,6 +11,12 @@ const Index = () => {
   const poems = getPoems().slice(0, 6);
   const home = getHomeData();
   const seo = getHomeSeo();
+  const heroLightSrcSet = home.heroImageLight.endsWith(".webp")
+    ? `${home.heroImageLight.replace(".webp", "-768.webp")} 768w, ${home.heroImageLight.replace(".webp", "-1280.webp")} 1280w, ${home.heroImageLight} 1920w`
+    : undefined;
+  const heroDarkSrcSet = home.heroImageDark.endsWith(".webp")
+    ? `${home.heroImageDark.replace(".webp", "-768.webp")} 768w, ${home.heroImageDark.replace(".webp", "-1280.webp")} 1280w, ${home.heroImageDark} 1920w`
+    : undefined;
 
   const authorJsonLd = {
     "@context": "https://schema.org",
@@ -47,6 +53,8 @@ const Index = () => {
         <div className="absolute inset-0">
           <img
             src={home.heroImageLight}
+            srcSet={heroLightSrcSet}
+            sizes="100vw"
             alt="Flori delicate și carte de poezie"
             className="w-full h-full object-cover dark:hidden"
             fetchPriority="high"
@@ -55,6 +63,8 @@ const Index = () => {
           />
           <img
             src={home.heroImageDark}
+            srcSet={heroDarkSrcSet}
+            sizes="100vw"
             alt="Flori delicate și carte de poezie"
             className="w-full h-full object-cover hidden dark:block"
             fetchPriority="high"

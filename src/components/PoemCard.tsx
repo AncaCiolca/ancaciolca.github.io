@@ -15,6 +15,9 @@ const PoemCard = ({ poem, index = 0, compact = false }: PoemCardProps) => {
     month: "long",
     day: "numeric",
   });
+  const responsiveSrcSet = poem.image?.endsWith(".webp")
+    ? `${poem.image.replace(".webp", "-640.webp")} 640w, ${poem.image.replace(".webp", "-1024.webp")} 1024w, ${poem.image} 1600w`
+    : undefined;
 
   if (compact) {
     // Compact card for homepage grid
@@ -31,8 +34,11 @@ const PoemCard = ({ poem, index = 0, compact = false }: PoemCardProps) => {
             <div className="h-48 overflow-hidden">
               <img
                 src={poem.image}
+                srcSet={responsiveSrcSet}
+                sizes="(max-width: 768px) 100vw, 33vw"
                 alt={poem.title}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -71,8 +77,11 @@ const PoemCard = ({ poem, index = 0, compact = false }: PoemCardProps) => {
             <div className="md:w-1/2 aspect-[4/3] overflow-hidden flex-shrink-0 rounded-2xl shadow-md">
               <img
                 src={poem.image}
+                srcSet={responsiveSrcSet}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt={poem.title}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
