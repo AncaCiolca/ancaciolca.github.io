@@ -2,7 +2,7 @@
 title: Îți aparține
 date: 2025-03-18
 excerpt: Când spun „mi-e dor”, mi-e dor de tine. Și mă inundă un fior sublim...
-image: /uploads/poem-7.jpg
+image: /uploads/poem-7.webp
 ---
 
 Când spun „mi-e dor”, mi-e dor de tine

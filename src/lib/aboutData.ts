@@ -9,6 +9,7 @@ export interface AboutData {
   heroImageLight?: string;
   heroImageDark?: string;
   email?: string;
+  emailReal?: string;
   contactTitle?: string;
   contactSubtitleSmall?: string;
   contactFooterText?: string;
@@ -33,6 +34,7 @@ export const getAboutData = (): AboutData => {
     heroImageLight: attributes.hero_image_light || "",
     heroImageDark: attributes.hero_image_dark || "",
     email: attributes.email || "",
+    emailReal: attributes.email_real || attributes.email || "",
     contactTitle: attributes.contact_title || "Scrie-mi",
     contactSubtitleSmall: attributes.contact_subtitle_small || "Scrie-mi pe email",
     contactFooterText:

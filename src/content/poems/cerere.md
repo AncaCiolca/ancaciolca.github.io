@@ -2,7 +2,7 @@
 title: Cerere
 date: 2026-03-03
 excerpt: Îmi cântă inima, o să te cer la noapte. Într-o poiană, la o margine de vis...
-image: /uploads/hero-bg.jpg
+image: /uploads/hero-bg.webp
 ---
 
 Îmi cântă inima, o să te cer la noapte,

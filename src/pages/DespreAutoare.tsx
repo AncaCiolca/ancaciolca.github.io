@@ -15,6 +15,8 @@ const DespreAutoare = () => {
   const about = getAboutData();
   const home = getHomeData();
   const paragraphs = about.body.split(/\n{2,}/).filter(Boolean);
+  const displayEmail = about.email || "";
+  const mailtoEmail = about.emailReal || about.email || "";
 
   const pageUrl = `${SITE_URL}/despre-mine`;
   const ogImage =
@@ -200,7 +202,7 @@ const DespreAutoare = () => {
             viewport={{ once: true }}
           >
             <a
-              href={about.email ? `mailto:${about.email}` : "#"}
+              href={mailtoEmail ? `mailto:${mailtoEmail}` : "#"}
               className="group block poem-card text-center py-10 md:py-14 hover:border-gold/40"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors duration-500">
@@ -209,9 +211,9 @@ const DespreAutoare = () => {
               <p className="font-body text-sm md:text-xs tracking-widest uppercase text-muted-foreground mb-3">
                 {(about.contactSubtitleSmall ?? "Scrie-mi pe email").toUpperCase()}
               </p>
-              {about.email && (
+              {displayEmail && (
                 <p className="font-display text-lg md:text-xl text-foreground group-hover:text-primary transition-colors duration-300">
-                  {about.email}
+                  {displayEmail}
                 </p>
               )}
               <div className="decorative-line mt-6" />

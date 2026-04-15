@@ -33,7 +33,7 @@ export const getSeoGlobal = (): SeoGlobal => {
 
   cachedGlobal = {
     siteName: attributes.site_name || "Anca Ciolca",
-    siteUrl: attributes.site_url || "https://versuri-de-suflet.ro",
+    siteUrl: attributes.site_url || "https://ancaciolca.github.io",
     defaultDescription:
       attributes.default_description ||
       "Un colț de liniște unde cuvintele prind aripi și se transformă în poezie. Descoperă versurile Ancăi Ciolca.",
@@ -62,11 +62,11 @@ export const getSeoHome = (): PageSeo => {
   cachedHome = mapPageSeo(seoHomeRaw as string, {
     metaTitle: global.siteName,
     metaDescription: global.defaultDescription,
-    ogImage: "/uploads/hero-bg.jpg",
+    ogImage: "/uploads/hero-bg.webp",
     authorName: "Anca Ciolca",
     authorDescription:
       "Poetă, autoare de poezii de suflet.",
-    authorImage: "/uploads/anca-ciolca-01.jpg",
+    authorImage: "/uploads/anca-ciolca-01.webp",
   });
   return cachedHome;
 };
@@ -77,7 +77,7 @@ export const getSeoPoems = (): PageSeo => {
   cachedPoems = mapPageSeo(seoPoemsRaw as string, {
     metaTitle: `${global.siteName} | Poezii`,
     metaDescription: "Toate poeziile Ancăi Ciolca, adunate într-un singur loc.",
-    ogImage: "/uploads/hero-bg.jpg",
+    ogImage: "/uploads/hero-bg.webp",
   });
   return cachedPoems;
 };
@@ -89,7 +89,7 @@ export const getSeoAbout = (): PageSeo => {
     metaTitle: `${global.siteName} | Despre Mine`,
     metaDescription:
       "Află mai multe despre Anca Ciolca, poeta din spatele versurilor de suflet.",
-    ogImage: "/uploads/anca-ciolca-01.jpg",
+    ogImage: "/uploads/anca-ciolca-01.webp",
   });
   return cachedAbout;
 };

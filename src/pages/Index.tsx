@@ -18,7 +18,7 @@ const Index = () => {
     name: seo.authorName || "Anca Ciolca",
     description: seo.authorDescription || DEFAULT_DESCRIPTION,
     url: SITE_URL,
-    image: seo.authorImage ? `${SITE_URL}${seo.authorImage}` : `${SITE_URL}/uploads/anca-ciolca-01.jpg`,
+    image: seo.authorImage ? `${SITE_URL}${seo.authorImage}` : `${SITE_URL}/uploads/anca-ciolca-01.webp`,
   };
 
   return (
@@ -49,11 +49,17 @@ const Index = () => {
             src={home.heroImageLight}
             alt="Flori delicate și carte de poezie"
             className="w-full h-full object-cover dark:hidden"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
           />
           <img
             src={home.heroImageDark}
             alt="Flori delicate și carte de poezie"
             className="w-full h-full object-cover hidden dark:block"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-background/80 dark:bg-background/65" />
           <div className="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-background via-background/70 to-transparent" />

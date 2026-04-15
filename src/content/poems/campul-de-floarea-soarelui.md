@@ -2,7 +2,7 @@
 title: Izvorul din noi
 date: 2025-06-10
 excerpt: Îmi tremură tot trupul și vibrez. Ca o vioară sub arcușul fin ...
-image: /uploads/hero-bg-dark.jpg
+image: /uploads/hero-bg-dark.webp
 ---
 
 Îmi tremură tot trupul și vibrez

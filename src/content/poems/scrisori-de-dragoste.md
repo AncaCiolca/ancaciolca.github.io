@@ -2,7 +2,7 @@
 title: Sărut pe suflet
 date: 2025-05-02
 excerpt: Azi am închis pentru o clipă ochii. Să văd cum curg culorile din cer...
-image: /uploads/Cerere.jpg
+image: /uploads/Cerere.webp
 ---
 
 Azi am închis pentru o clipă ochii

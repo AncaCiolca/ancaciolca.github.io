@@ -2,7 +2,7 @@
 title: Meandre de mister
 date: 2024-10-05
 excerpt: Ce dimineață caldă, dragul meu. Sub trupul tău, pierdută printre perne...
-image: /uploads/poem-3.jpg
+image: /uploads/poem-3.webp
 ---
 
 Ce dimineață caldă, dragul meu,

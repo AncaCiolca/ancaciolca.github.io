@@ -52,7 +52,8 @@ singletons:
       - { label: "Imagine fundal Hero - tema light", name: "hero_image_light", widget: "image", required: false }
       - { label: "Imagine fundal Hero - tema dark", name: "hero_image_dark", widget: "image", required: false }
       - { label: "Citat", name: "quote", widget: "string", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Email afișat", name: "email", widget: "string", required: false }
+      - { label: "Email real (mailto)", name: "email_real", widget: "string", required: false }
       - { label: "Titlu secțiune contact", name: "contact_title", widget: "string", required: false }
       - { label: "Subtitlu mic contact", name: "contact_subtitle_small", widget: "string", required: false }
       - { label: "Text sub card contact", name: "contact_footer_text", widget: "string", required: false }

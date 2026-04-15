@@ -2,7 +2,7 @@
 title: Cum să fac?
 date: 2025-02-14
 excerpt: Cum să fac când mi se face dor? Buzele îmi ard de neiubit...
-image: /uploads/poem-6.jpg
+image: /uploads/poem-6.webp
 ---
 
 Cum să fac când mi se face dor?

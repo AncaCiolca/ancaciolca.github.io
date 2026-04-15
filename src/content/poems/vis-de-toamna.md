@@ -2,7 +2,7 @@
 title: La ceas de seară
 date: 2024-11-20
 excerpt: Iubitule, să vii pe la apus. Căci te-aștept cu buzele fierbinți...
-image: /uploads/poem-2.jpg
+image: /uploads/poem-2.webp
 ---
 
 Iubitule, să vii pe la apus,

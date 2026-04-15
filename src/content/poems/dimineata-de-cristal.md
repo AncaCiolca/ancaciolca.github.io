@@ -2,7 +2,7 @@
 title: Poem fierbinte
 date: 2024-12-15
 excerpt: Plouă orgasmic peste pielea mea. Curg printre sâni doar picături de miere...
-image: /uploads/poem-1.jpg
+image: /uploads/poem-1.webp
 ---
 
 Plouă orgasmic peste pielea mea,

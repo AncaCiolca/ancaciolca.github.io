@@ -2,7 +2,7 @@
 title: Sărutul iernii
 date: 2025-01-25
 excerpt: Aș vrea să mă săruți cu fulgi de nea. Să ne topim încet, și eu, și ei...
-image: /uploads/poem-5.jpg
+image: /uploads/poem-5.webp
 ---
 
 Aș vrea să mă săruți cu fulgi de nea,

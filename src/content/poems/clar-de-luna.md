@@ -2,7 +2,7 @@
 title: Dialog fierbinte
 date: 2025-01-08
 excerpt: Hai să vorbim în doi despre iubire, Să-mi spui ce simți când te ating...
-image: /uploads/poem-4.jpg
+image: /uploads/poem-4.webp
 ---
 
 Hai să vorbim în doi despre iubire,

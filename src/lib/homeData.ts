@@ -1,7 +1,7 @@
 import homeRaw from "/src/content/home.md?raw";
 import { parseFrontmatter } from "@/lib/poemsData";
-import defaultHeroLight from "@/assets/hero-bg.jpg";
-import defaultHeroDark from "@/assets/hero-bg-dark.jpg";
+import defaultHeroLight from "@/assets/hero-bg.webp";
+import defaultHeroDark from "@/assets/hero-bg-dark.webp";
 
 export interface HomeData {
   heroTitle: string;
