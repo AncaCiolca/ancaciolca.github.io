@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
+Copyright Notice
 
-## Project info
+## English
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+© 2026 Artist Web Studio. All rights reserved.
 
-## How can I edit this code?
+This project, including all files, design, code, structure, and content, is the intellectual property of Artist Web Studio and/or the respective artist.
 
-There are several ways of editing your application.
+No part of this project may be copied, reproduced, modified, distributed, or used in any form, whether for personal or commercial purposes, without explicit prior written permission from the owner.
 
-**Use Lovable**
+Unauthorized use is strictly prohibited.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Română
 
-**Use your preferred IDE**
+© 2026 Artist Web Studio. Toate drepturile rezervate.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Acest proiect, inclusiv toate fișierele, designul, codul, structura și conținutul, reprezintă proprietatea intelectuală a Artist Web Studio și/sau a artistului.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Este interzisă copierea, reproducerea, modificarea, distribuirea sau utilizarea sub orice formă, în scop personal sau comercial, fără acordul scris prealabil al deținătorului.
 
-Follow these steps:
+Orice utilizare neautorizată este strict interzisă.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Français
 
-# Step 3: Install the necessary dependencies.
-npm i
+© 2026 Artist Web Studio. Tous droits réservés.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Ce projet, y compris tous les fichiers, le design, le code, la structure et le contenu, constitue la propriété intellectuelle de Artist Web Studio et/ou de l’artiste concerné.
 
-**Edit a file directly in GitHub**
+Toute copie, reproduction, modification, distribution ou utilisation, à des fins personnelles ou commerciales, est strictement interdite sans autorisation écrite préalable du propriétaire.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Toute utilisation non autorisée est strictement interdite.
 
-**Use GitHub Codespaces**
+##########################################
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+ARTIST WEB STUDIO  
+FROM TALENT TO VISIBILITY.  
+WE BUILD THE BRIDGE.  
+TURN YOUR ART INTO A DIGITAL PRESENCE.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+##########################################
