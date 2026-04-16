@@ -9,8 +9,8 @@ latest_title: Ultimele Poezii
 latest_subtitle: Cele mai recente gânduri puse în versuri
 footer_title: Anca Ciolca
 footer_quote: Poezia este muzica sufletului
-footer_copyright: © 2026 Anca Ciolca. Toate drepturile rezervate.
 facebook: '#'
 instagram: '#'
 youtube: '#'
+footer_copyright: © 2026 Artist Web Studio
 ---
