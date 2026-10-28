@@ -25,5 +25,6 @@ import "@fontsource/cormorant-garamond/latin-ext-500.css";
 import "@fontsource/cormorant-garamond/latin-ext-400-italic.css";
 import "@fontsource/cormorant-garamond/latin-ext-500-italic.css";
 import "./index.css";
+import "./mobile-menu.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
